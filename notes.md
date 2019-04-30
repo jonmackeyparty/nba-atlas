@@ -17,3 +17,37 @@
         -pending invites
         -link to a form for a new invitation: /admin/1/invitations/new
           (this will link to Player.all, as all registered users are reachable)
+
+#What models will this app need and what structure their data?
+
+  Admin
+    has_many: invitations
+    (id)
+    name: string
+
+  Player
+    (id)
+    name: string
+    age: integer
+    nickname: string
+    position: string
+    jersey_number: integer
+
+  Team
+    has_many: players
+    (id)
+    name: string
+
+
+  League
+    (id)
+    name: string
+    type: string (ie pickup, summer league, rec league, church league)
+    schedule: string
+
+
+  Invitation
+    admin_id
+    league_id: integer
+    player_id: integer
+    accepted?: boolean
