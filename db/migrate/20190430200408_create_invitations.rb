@@ -9,8 +9,3 @@ class CreateInvitations < ActiveRecord::Migration[5.2]
     end
   end
 end
-
-
-league_id: integer
-player_id: integer
-accepted?: boolean
