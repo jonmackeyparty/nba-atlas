@@ -21,7 +21,7 @@
 #What models will this app need and what structure their data?
 
   Admin
-    belongs_to: league
+    has_many: leagues
     (id)
     name: string
 
@@ -44,7 +44,7 @@
 
 
   League
-    has_one: admin
+    belongs_to: admin
     has_many: teams
     has_many: players, through: invitations
     has_many: invitations
@@ -62,10 +62,17 @@
     player_id: integer
     accepted?: boolean
 
-#What views will this app need? (centered on admin and user -- but who adds teams etc?  Admin can add team to his/her league, no one will add teams globally, also, players create themselves, not the admin, so no player add form for admins.  Who creates leagues?)
+#What views will this app need? (centered on admin and user -- but who adds teams etc?  Admin can add team to his/her league, no one will add teams globally, also, players create themselves, not the admin, so no player add form for admins.  Who creates leagues?  Are admins also players?)
+
+  Login/Logout
+  /login
+    -if user is admin > admin show page  
+    -if user is player > player show page
 
   Admin
     admins/:id/leagues
+      -shows leagues the admin...administrates
+    admins/:id/leagues/new
 
     <--- The following if league.type == pickup ---->
     admins/:id/league/:id/players
@@ -77,5 +84,9 @@
 
     admins/:id/league/:id/invitations/new
 
-  User
-    users
+
+
+  Player
+    players/new
+      -registration form, also acts as admin registration form?
+    players/:id/
