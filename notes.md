@@ -21,11 +21,14 @@
 #What models will this app need and what structure their data?
 
   Admin
-    has_many: invitations
+    belongs_to: league
     (id)
     name: string
 
   Player
+    has_many: teams, through: leagues
+    has_many: leagues, through: invitations
+    has_many: invitations
     (id)
     name: string
     age: integer
@@ -34,12 +37,17 @@
     jersey_number: integer
 
   Team
+    belongs_to: league
     has_many: players
     (id)
     name: string
 
 
   League
+    has_one: admin
+    has_many: teams
+    has_many: players, through: invitations
+    has_many: invitations
     (id)
     name: string
     type: string (ie pickup, summer league, rec league, church league)
@@ -47,7 +55,9 @@
 
 
   Invitation
-    admin_id
+    belongs_to: league
+    belongs_to: player
+    admin_id: integer
     league_id: integer
     player_id: integer
     accepted?: boolean
