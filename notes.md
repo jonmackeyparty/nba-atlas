@@ -61,3 +61,21 @@
     league_id: integer
     player_id: integer
     accepted?: boolean
+
+#What views will this app need? (centered on admin and user -- but who adds teams etc?  Admin can add team to his/her league, no one will add teams globally, also, players create themselves, not the admin, so no player add form for admins.  Who creates leagues?)
+
+  Admin
+    admins/:id/leagues
+
+    <--- The following if league.type == pickup ---->
+    admins/:id/league/:id/players
+    admins/:id/league/:id/players/:id
+    <------Else the following is available --------->
+    admins/:id/league/:id/teams/
+    admins/:id/league/:id/teams/:id
+    admins/:id/league/:id/teams/new
+
+    admins/:id/league/:id/invitations/new
+
+  User
+    users
