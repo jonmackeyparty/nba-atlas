@@ -57,7 +57,6 @@
   Invitation
     belongs_to: league
     belongs_to: player
-    admin_id: integer
     league_id: integer
     player_id: integer
     accepted?: boolean
