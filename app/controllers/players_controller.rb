@@ -7,19 +7,27 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     if @player.checks_out?
-      raise params.inspect
+      @player.save
+        if @player.admin
+          redirect_to admin_path(@player)
+        else
+          redirect_to player_path(@player)
+        end 
     else
-      render '/signup'
-    end 
+      render 'players/new'
+    end
   end
 
   def destroy
   end
 
+  def show
+  end
+
   private
 
   def player_params
-    params.require(:player).permit(:name, :age, :nickname, :position, :jersey_number, :password, :password_confirmation)
+    params.require(:player).permit(:name, :age, :nickname, :position, :jersey_number, :admin, :password, :password_confirmation)
   end
 
 end
