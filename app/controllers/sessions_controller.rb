@@ -4,23 +4,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-      session[:name] = params[:name]
-    if !logged_in?
-      redirect_to '/login'
-    else
-      redirect_to '/'
-    end
+    @player = Player.find_by(name: params[:name])
+    return head(:forbidden) unless @player.authenticate(params[:password])
+    session[:player_id] = @player.id
   end
 
   def destroy
-    def destroy
     if logged_in?
       session.delete :name
       render 'sessions/new'
     else
       redirect_to '/login'
     end
-  end
   end
 
   def logged_in?
