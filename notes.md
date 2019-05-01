@@ -35,6 +35,7 @@
     nickname: string
     position: string
     jersey_number: integer
+    admin?: boolean
 
   Team
     belongs_to: league
@@ -69,19 +70,19 @@
     -if user is player > player show page
 
   Admin
-    admins/:id/leagues
+    admin/:id/leagues
       -shows leagues the admin...administrates
-    admins/:id/leagues/new
+    admin/:id/leagues/new
 
     <--- The following if league.type == pickup ---->
-    admins/:id/league/:id/players
-    admins/:id/league/:id/players/:id
+    admin/:id/league/:id/players
+    admin/:id/league/:id/players/:id
     <------Else the following is available --------->
-    admins/:id/league/:id/teams/
-    admins/:id/league/:id/teams/:id
-    admins/:id/league/:id/teams/new
+    admin/:id/league/:id/teams/
+    admin/:id/league/:id/teams/:id
+    admin/:id/league/:id/teams/new
 
-    admins/:id/league/:id/invitations/new
+    admin/:id/league/:id/invitations/new
 
 
 
