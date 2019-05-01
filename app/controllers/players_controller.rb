@@ -8,11 +8,12 @@ class PlayersController < ApplicationController
     @player = Player.new(player_params)
     if @player.checks_out?
       @player.save
+      session[:id] = @player.id
         if @player.admin
           redirect_to admin_path(@player)
         else
           redirect_to player_path(@player)
-        end 
+        end
     else
       render 'players/new'
     end
@@ -22,6 +23,7 @@ class PlayersController < ApplicationController
   end
 
   def show
+    current_user
   end
 
   private
