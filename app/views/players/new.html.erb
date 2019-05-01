@@ -1,11 +1,11 @@
 <h2> NBA Signup Form </h2>
 <%= form_for @player do |f| %>
-  <%= f.text_field :name %>
-  <%= f.number_field :age %>
-  <%= f.text_field :nickname %>
-  <%= f.text_field :position %>
-  <%= f.number_field :jersey_number %>
-  <%= f.password :password %>
-  <%= f.password :password_confirmation %>
-  <%= f.submit %>
+  Name: <%= f.text_field :name %><br>
+  Age: <%= f.number_field :age %><br>
+  Nickname: <%= f.text_field :nickname %><br>
+  Position: <%= f.text_field :position %><br>
+  Jersey Number: <%= f.number_field :jersey_number %><br>
+  Password: <%= f.password_field :password %><br>
+  Confirm Password: <%= f.password_field :password_confirmation %><br>
+  <%= f.submit "Create New Account"%>
 <% end %>
