@@ -6,11 +6,11 @@
 <% else %>
 <p>No Leagues currently assigned.</p>
 <% end %>
-<%= link_to "Create a new League", new_player_league_path(@player) %><br>
+<p><%= link_to "Create a new League", new_player_league_path(@player) %></p>
 
 <h2>Recently Sent Invitations</h2>
 
 <%= render 'recent' %>
 
 
-<%= link_to "New Invitation", new_player_invitation_path(@player) %><br>
+<%= link_to "Send New Invitation", new_player_invitation_path(@player) %><br>

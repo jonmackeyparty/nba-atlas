@@ -2,8 +2,8 @@
   <% if league.invitations.recent.any? %>
   <ul>
     <% league.invitations.recent.each do |i| %>
-      <li>Invitation sent from <%= i.league_name %> on <%= i.created_date %> to <%= i.player_name %>
-    <% end %>
+      <li>Invitation sent from <%= i.league_name %> on <%= i.created_date %> to <%= i.player_name %>.
   </ul>
+    <% end %>
   <% end %>
 <% end %>

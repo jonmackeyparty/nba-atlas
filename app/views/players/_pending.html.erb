@@ -1,11 +1,13 @@
 <% if @player.invitations.pending.any? %>
+  <ul>
   <% @player.invitations.pending.each do |i| %>
-  Invitation Recieved from <%= i.league_name %> on <%= i.created_date %>, courtesy of <%= i.admin_name %>.
+  <li>Invitation Received from <%= i.league_name %> on <%= i.created_date %>, courtesy of <%= i.admin_name %>.
     <%= form_for i do |f| %>
       <%= f.check_box :accepted %>
       <%= f.submit 'Accept Invitation'%>
     <% end %>
   <% end %>
+  </ul>
 <% else %>
   <p>No pending invitations</p>
 <% end %>
