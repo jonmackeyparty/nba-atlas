@@ -12,5 +12,7 @@
 
 <%= render 'admin_show' if @player.admin %>
 
+<h2>Pending Invitations</h2>
+
 <p><%= link_to 'Logout', '/logout', method: :post %>
    <%= link_to "Edit Profile", edit_player_path(@player)%>
