@@ -1,0 +1,11 @@
+<%= form_for @player do |f| %>
+  Name: <%= f.text_field :name %><br>
+  Age: <%= f.number_field :age %><br>
+  Nickname: <%= f.text_field :nickname %><br>
+  Position: <%= f.text_field :position %><br>
+  Jersey Number: <%= f.number_field :jersey_number %><br>
+  Are you a League Administrator? <%=f.check_box :admin %><br>
+  Password: <%= f.password_field :password %><br>
+  Confirm Password: <%= f.password_field :password_confirmation %><br>
+  <%= f.submit %>
+<% end %>

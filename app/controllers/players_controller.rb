@@ -25,6 +25,10 @@ class PlayersController < ApplicationController
     current_user
   end
 
+  def edit
+    current_user
+  end
+  
   private
 
   def player_params
