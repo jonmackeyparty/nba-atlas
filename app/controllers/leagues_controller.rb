@@ -1,7 +1,7 @@
 class LeaguesController < ApplicationController
 
   def new
-    @admin = Player.find(session[:player_id])
+    @player_admin = Player.find(session[:player_id])
     @league = League.new
   end
 
@@ -10,7 +10,7 @@ class LeaguesController < ApplicationController
   end
 
   def show
-  end 
+  end
 
 
 end
