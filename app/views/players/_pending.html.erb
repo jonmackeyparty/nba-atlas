@@ -1,6 +1,6 @@
 <% if @player.invitations.pending.any? %>
   <% @player.invitations.pending.each do |i| %>
-  Invitation Recieved from <%= i.league_name %> at <%= i.created_at %>
+  Invitation Recieved from <%= i.league_name %> on <%= i.created_date %>, courtesy of <%= i.admin_name %>.
   <% end %>
 <% else %>
   <p>No pending invitations</p>
