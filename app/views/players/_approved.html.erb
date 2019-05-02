@@ -1,0 +1,8 @@
+<h3>Active Leagues as Player</h3>
+<% if @player.invitations.approved.any? %>
+  <% @player.invitations.approved.each do |i| %>
+    <%= link_to "#{i.league.name}", league_path(i.league) %>
+  <% end %>
+<% else %>
+  <p>No active Leagues</p>
+<% end %>

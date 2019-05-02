@@ -1,4 +1,4 @@
-<h2>Leagues</h2>
+<h3>Active Leagues as Admin</h3>
 <% if @player.leagues.any? %>
   <% @player.leagues.each do |league| %>
     <%= link_to "#{league.name}", league_path(league) %><br>

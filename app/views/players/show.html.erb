@@ -1,14 +1,14 @@
 <h2><%= @player.name %></h2>
 <ul>
-  <li>
-    <label>Nickname: </label><%= @player.nickname %>
-  <li>
-    <label>Age: </label><%= @player.age %>
-  <li>
-    <label>Position: </label><%= @player.position %>
-  <li>
-    <label>Jersey Number: </label><%= @player.jersey_number %>
+  <li><label>Nickname: </label><%= @player.nickname %>
+  <li><label>Age: </label><%= @player.age %>
+  <li><label>Position: </label><%= @player.position %>
+  <li><label>Jersey Number: </label><%= @player.jersey_number %>
 </ul>
+
+<h2>Leagues</h2>
+
+<%= render 'approved' %>
 
 <%= render 'admin_show' if @player.admin %>
 
@@ -16,5 +16,4 @@
 
 <%= render 'pending' %>
 
-<p><%= link_to 'Logout', '/logout', method: :post %>
-   <%= link_to "Edit Profile", edit_player_path(@player)%>
+<p><%= link_to 'Logout', '/logout', method: :post %> <%= link_to "Edit Profile", edit_player_path(@player)%>
