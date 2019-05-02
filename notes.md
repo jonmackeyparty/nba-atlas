@@ -69,24 +69,19 @@
     -if user is admin > admin show page  
     -if user is player > player show page
 
-  Admin
-    admin/:id/leagues
-      -shows leagues the admin...administrates
-    admin/:id/leagues/new
-
-    <--- The following if league.type == pickup ---->
-    admin/:id/league/:id/players
-    admin/:id/league/:id/players/:id
-    <------Else the following is available --------->
-    admin/:id/league/:id/teams/
-    admin/:id/league/:id/teams/:id
-    admin/:id/league/:id/teams/new
-
-    admin/:id/league/:id/invitations/new
-
-
-
   Player
     players/new
-      -registration form, also acts as admin registration form?
+      -registration form, also acts as admin registration form
+
     players/:id/
+
+    <--- The following if league.type == pickup ---->
+    players/:id/league/:id
+      -This will only host a list of players who play in this league, linking to their pages
+
+    <------Else these 3 are available --------->
+    players/:id/league/:id/teams/
+    players/:id/league/:id/teams/:id
+    players/:id/league/:id/teams/new
+
+    players/:id/invitations/new

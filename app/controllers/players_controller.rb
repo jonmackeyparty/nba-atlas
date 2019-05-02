@@ -11,11 +11,8 @@ class PlayersController < ApplicationController
     if @player.checks_out?
       @player.save
       session[:player_id] = @player.id
-        if @player.admin
-          redirect_to admin_path(@player)
-        else
-          redirect_to player_path(@player)
-        end
+      flash[:message] = "Profile successfully created."
+      redirect_to player_path(@player)
     else
       render 'players/new'
     end

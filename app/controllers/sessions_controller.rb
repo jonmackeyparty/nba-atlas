@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #raise params.inspect
     @player = Player.find_by(name: params[:name])
     if @player
       return head(:forbidden) unless @player.authenticate(params[:password])
@@ -13,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to player_path(@player)
     else
       redirect_to '/login'
-      #flash message goes here
+      flash[:message] = "You must create an account to continue."
     end
   end
 
@@ -21,7 +20,7 @@ class SessionsController < ApplicationController
     if logged_in?
       session.delete :player_id
       flash[:message] = "You have successfully logged out."
-      render 'sessions/new'
+      redirect_to'/login'
     else
       redirect_to '/login'
     end
