@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :leagues, only: [:show, :new, :create, :edit]
+  resources :invitations, only: [:show, :new, :create, :edit]
 
 
 end
