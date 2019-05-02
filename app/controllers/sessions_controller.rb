@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
   def destroy
     if logged_in?
       session.delete :player_id
+      flash[:message] = "You have successfully logged out."
       render 'sessions/new'
     else
       redirect_to '/login'
