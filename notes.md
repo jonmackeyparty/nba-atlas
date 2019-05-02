@@ -69,7 +69,7 @@
     -if user is admin > admin show page  
     -if user is player > player show page
 
-  Player
+  Player <----Use an alias_attribute to avoid 'admin' confusion?------>
     players/new
       -registration form, also acts as admin registration form
 
@@ -79,7 +79,7 @@
     players/:id/league/:id
       -This will only host a list of players who play in this league, linking to their pages
 
-    <------Else these 3 are available --------->
+    <------Else these 3 are also available --------->
     players/:id/league/:id/teams/
     players/:id/league/:id/teams/:id
     players/:id/league/:id/teams/new

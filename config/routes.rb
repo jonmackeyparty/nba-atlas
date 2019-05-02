@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   get '/signup' => 'players#new'
 
   resources :players do
-    resources :leagues, only: [:show, :new]
+    resources :leagues, :shallow => true
+    resources :invitations, :shallow => true
+    resources :teams, :shallow => true
   end
 
-  resources :leagues, only: [:show, :new, :create]
 
 end

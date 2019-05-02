@@ -11,13 +11,15 @@ class LeaguesController < ApplicationController
     if @league.save
       redirect_to player_path(@league.player)
     else
-      raise params.inspect
       redirect_to new_player_league_path(@player)
     end
   end
 
   def show
   end
+
+  def edit
+  end 
 
   private
 
