@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :teams, :shallow => true
   end
 
+  resources :leagues, only: [:show, :new, :create, :edit]
+
 
 end
