@@ -1,9 +1,13 @@
 <h2><%= @player.name %></h2>
 <ul>
-  <li>Nickname: <%= @player.nickname %>
-  <li>Age: <%= @player.age %>
-  <li>Position: <%= @player.position %>
-  <li>Jersey Number: <%= @player.jersey_number %>
+  <li>
+    <label>Nickname: </label><%= @player.nickname %>
+  <li>
+    <label>Age: </label><%= @player.age %>
+  <li>
+    <label>Position: </label><%= @player.position %>
+  <li>
+    <label>Jersey Number: </label><%= @player.jersey_number %>
 </ul>
 
 <%= render 'admin_show' if @player.admin %>

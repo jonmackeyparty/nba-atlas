@@ -1,0 +1,10 @@
+<%= form_for @league do |f| %>
+  <%= f.hidden_field :player_id %>
+  <label>League Name: </label><br>
+  <%= f.text_field :name %><br>
+  <label>League Type: </label><br>
+  <%= f.text_field :league_type %><br>
+  <label>League Schedule: </label><br>
+  <%= f.text_field :schedule %><br>
+  <%= f.submit %>
+<% end %>

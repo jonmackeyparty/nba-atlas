@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resources :players do
     resources :leagues, only: [:show, :new]
   end
-  
+
+  resources :leagues, only: [:show, :new, :create]
+
 end
