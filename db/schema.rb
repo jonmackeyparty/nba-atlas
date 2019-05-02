@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_020507) do
+ActiveRecord::Schema.define(version: 2019_05_02_174940) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_05_02_020507) do
   create_table "invitations", force: :cascade do |t|
     t.integer "league_id"
     t.integer "player_id"
-    t.boolean "accepted?", default: false
+    t.boolean "accepted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

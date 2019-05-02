@@ -14,10 +14,16 @@ class InvitationsController < ApplicationController
     end
   end
 
+  def update
+    @invitation = Invitation.find(params[:id])
+    @invitation.update(invitations_params)
+    redirect_to player_path(current_user)
+  end
+
   private
 
   def invitations_params
-    params.require(:invitation).permit(:player_id, :league_id, :accepted?)
+    params.require(:invitation).permit(:player_id, :league_id, :accepted)
   end
 
 end

@@ -1,7 +1,7 @@
 class Invitation < ApplicationRecord
   belongs_to :league
   belongs_to :player
-  scope :pending, -> { where(accepted?: false) }
+  scope :pending, -> { where(accepted: false) }
 
   def league_name
     League.find(self.league_id).name
@@ -14,5 +14,5 @@ class Invitation < ApplicationRecord
   def created_date
     self.created_at.strftime("%A, %b %d")
   end
-  
+
 end
