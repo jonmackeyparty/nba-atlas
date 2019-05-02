@@ -6,12 +6,18 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    raise params.inspect
+    @invitation = Invitation.new(invitations_params)
+    if @invitation.save
+      redirect_to player_path(current_user)
+    else
+      redirect_to new_player_invitation_path(current_user)
+    end
   end
 
   private
 
   def invitations_params
     params.require(:invitation).permit(:player_id, :league_id, :accepted?)
+  end
 
 end
