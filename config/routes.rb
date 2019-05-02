@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
   get '/signup' => 'players#new'
+
+  resources :players do
+    resources :leagues, only: [:show, :new]
+  end
   
-  resources :players
 end
