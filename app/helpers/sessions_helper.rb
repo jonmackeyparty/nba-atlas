@@ -6,6 +6,6 @@ module SessionsHelper
     else
       redirect_to player_path(@player)
     end
-  end 
+  end
 
 end

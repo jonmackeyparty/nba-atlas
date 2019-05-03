@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  include SessionsHelper
 
   def new
     @player = Player.new
@@ -17,13 +18,15 @@ class SessionsController < ApplicationController
   end
 
   def github_login
-    @player = Player.find_or_create_by(:uid => auth['uid']) do |p|
+    @player = Player.find_or_initialize_by(:id => auth['uid']) do |p|
       p.name = auth['info']['name']
     end
+    @player.password_digest = SecureRandom.urlsafe_base64
+    @player.save
     session[:player_id] = @player.id
+    #raise params.inspect
     attribute_check
   end
-
 
   def destroy
     if logged_in?

@@ -28,11 +28,17 @@ class PlayersController < ApplicationController
   def edit
     current_user
   end
-  
+
+  def update
+    current_user
+    @player.update(player_params)
+    redirect_to player_path(@player)
+  end
+
   private
 
   def player_params
-    params.require(:player).permit(:name, :age, :nickname, :position, :jersey_number, :admin, :password, :password_confirmation, leagues_attributes: [:name, :league_type, :schedule, :player_id])
+    params.require(:player).permit(:name, :age, :nickname, :position, :jersey_number, :admin, :password, :password_confirmation)
   end
 
   def require_login
