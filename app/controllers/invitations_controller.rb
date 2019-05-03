@@ -7,11 +7,16 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    @invitation = Invitation.new(invitations_params)
-    if @invitation.save
+    if params['commit'] == "Cancel"
       redirect_to player_path(current_user)
     else
-      redirect_to new_player_invitation_path(current_user)
+      @invitation = Invitation.new(invitations_params)
+      if @invitation.save
+        flash[:message] = "Invitation successfully sent."
+        redirect_to player_path(current_user)
+      else
+        redirect_to new_player_invitation_path(current_user)
+      end
     end
   end
 

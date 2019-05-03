@@ -1,6 +1,5 @@
 class LeaguesController < ApplicationController
   before_action :require_login
-  skip_before_action :require_login, only: [:new, :create]
 
   def index
     current_user
@@ -9,12 +8,10 @@ class LeaguesController < ApplicationController
   def new
     current_user
     @league = League.new(:player_id => params[:player_id])
-    #raise params.inspect
   end
 
   def create
     current_user
-    #raise params.inspect
     @league = League.new(league_params)
     if @league.save
       redirect_to player_path(@league.player)
@@ -30,10 +27,12 @@ class LeaguesController < ApplicationController
   end
 
   def show
+    current_user
     @league = League.find(params[:id])
   end
 
   def edit
+    current_user
     @league = League.find(params[:id])
   end
 

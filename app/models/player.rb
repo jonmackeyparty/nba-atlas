@@ -3,7 +3,6 @@ class Player < ApplicationRecord
   has_many :leagues, through: :invitations
   has_many :invitations
   has_many :leagues
-  accepts_nested_attributes_for :leagues
   has_secure_password
 
 
