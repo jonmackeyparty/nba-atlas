@@ -1,4 +1,4 @@
-<%= form_with(model: @league, url: (@league.new_record? ? [@player, @league]: @league)) do |f| %>
+<%= form_for((@league.new_record? ? [@player, @league] : @league)) do |f| %>
     <%= f.hidden_field :player_id %>
     <label>League Name: </label><br>
     <%= f.text_field :name %><br>
