@@ -17,7 +17,11 @@ class SessionsController < ApplicationController
   end
 
   def github_login
-
+    @player = Player.find_or_create_by(:uid => auth['uid']) do |p|
+      p.name = auth['info']['name']
+    end
+    session[:player_id] = @player.id
+    attribute_check
   end
 
 
