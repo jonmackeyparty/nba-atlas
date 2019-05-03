@@ -1,6 +1,10 @@
 class InvitationsController < ApplicationController
   before_action :require_login
 
+  def index
+    current_user
+  end
+
   def new
     current_user
     @invitation = Invitation.new
