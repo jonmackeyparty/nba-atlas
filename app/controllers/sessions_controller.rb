@@ -16,6 +16,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def github_login
+
+  end
+
+
   def destroy
     if logged_in?
       session.delete :player_id
@@ -24,6 +29,12 @@ class SessionsController < ApplicationController
     else
       redirect_to '/login'
     end
+  end
+
+  private
+
+  def auth
+    request.env['omniauth.auth']
   end
 
 end
