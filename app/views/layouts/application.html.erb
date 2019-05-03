@@ -13,6 +13,16 @@
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: "alert alert-info" %>
     <% end %>
-  <%= yield %>
+    <div class='container'>
+      <nav>
+        <div class='container'>
+          <a href="/">NBA ATLAS</a>
+          <ul>
+            <li><a href="/login">Log In</a></li>
+          </ul>
+        </div>
+      </nav>
+      <%= yield %>
+    </div>
   </body>
 </html>

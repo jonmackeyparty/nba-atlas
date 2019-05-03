@@ -1,10 +1,22 @@
 <h2><%= @player.name %></h2>
-<ul>
-  <li><label>Nickname: </label><%= @player.nickname %>
-  <li><label>Age: </label><%= @player.age %>
-  <li><label>Position: </label><%= @player.position %>
-  <li><label>Jersey Number: </label><%= @player.jersey_number %>
-</ul>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Nickname: </th>
+      <th>Age: </th>
+      <th>Position: </th>
+      <th>Jersey Number: </th>
+    <tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @player.nickname %></td>
+      <td><%= @player.age %></td>
+      <td><%= @player.position %></td>
+      <td><%= @player.jersey_number %></td>
+    </tr>
+    </tbody>    
+</table>
 
 <h2>Leagues</h2>
 

@@ -1,7 +1,12 @@
-<% if @player.leagues.any? %>
-  <% @player.leagues.each do |league| %>
-    <%= link_to "#{league.name}", league_path(league) %><br>
-  <% end %>
-<% else %>
-<p>No Leagues currently assigned.</p>
-<% end %>
+<div class='row'>
+  <h3 class='eight columns'><%= link_to "Active Leagues as Admin", player_leagues_path(@player) %></h3>
+  <div class="four columns">
+    <% if @player.leagues.any? %>
+      <% @player.leagues.each do |league| %>
+        <%= link_to "#{league.name}", league_path(league) %><br>
+      <% end %>
+    <% else %>
+      <p>No Leagues currently assigned.</p>
+    <% end %>
+  </div>
+</div>
