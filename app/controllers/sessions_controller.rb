@@ -24,7 +24,6 @@ class SessionsController < ApplicationController
     @player.password_digest = SecureRandom.urlsafe_base64
     @player.save
     session[:player_id] = @player.id
-    #raise params.inspect
     attribute_check
   end
 

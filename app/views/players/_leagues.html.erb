@@ -1,0 +1,7 @@
+<% if @player.leagues.any? %>
+  <% @player.leagues.each do |league| %>
+    <%= link_to "#{league.name}", league_path(league) %><br>
+  <% end %>
+<% else %>
+<p>No Leagues currently assigned.</p>
+<% end %>

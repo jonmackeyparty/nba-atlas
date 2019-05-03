@@ -41,8 +41,4 @@ class PlayersController < ApplicationController
     params.require(:player).permit(:name, :age, :nickname, :position, :jersey_number, :admin, :password, :password_confirmation)
   end
 
-  def require_login
-    return head(:forbidden) unless session.include? :player_id
-  end
-
 end

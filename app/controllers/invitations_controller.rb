@@ -1,4 +1,5 @@
 class InvitationsController < ApplicationController
+  before_action :require_login
 
   def new
     current_user

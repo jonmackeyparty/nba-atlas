@@ -1,11 +1,7 @@
-<h3>Active Leagues as Admin</h3>
-<% if @player.leagues.any? %>
-  <% @player.leagues.each do |league| %>
-    <%= link_to "#{league.name}", league_path(league) %><br>
-  <% end %>
-<% else %>
-<p>No Leagues currently assigned.</p>
-<% end %>
+<h3><%= link_to "Active Leagues as Admin", player_leagues_path(@player) %></h3>
+
+<%= render 'leagues' %>
+
 <p><%= link_to "Create a new League", new_player_league_path(@player) %></p>
 
 <h2>Recently Sent Invitations</h2>

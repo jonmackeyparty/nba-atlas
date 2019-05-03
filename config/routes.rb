@@ -10,11 +10,6 @@ Rails.application.routes.draw do
   resources :players do
     resources :leagues, :shallow => true
     resources :invitations, :shallow => true
-    resources :teams, :shallow => true
   end
-
-  resources :leagues, only: [:show, :new, :create, :edit]
-  resources :invitations, only: [:show, :new, :create, :edit]
-
 
 end
