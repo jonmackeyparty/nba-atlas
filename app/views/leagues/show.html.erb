@@ -1,7 +1,9 @@
-<h2><%= @league.name %></h2>
+<div class="section">
+  <h2><%= @league.name %></h2>
+</div>
 <ul>
-  <li><label>League Type: </label><%= @league.league_type %>
-  <li><label>Schedule: </label><%= @league.schedule %>
-  <li><label>League Admin: </label><%= @league.player.name %>
+  <li>League Type: <%= @league.league_type %>
+  <li>Schedule: <%= @league.schedule %>
+  <li>League Admin: <%= @league.player.name %>
 </ul>
-<%= link_to "Edit League", edit_league_path(@league) if @player == @league.player %>
+<h5><%= link_to "Edit League", edit_league_path(@league) if @player == @league.player %></h5>

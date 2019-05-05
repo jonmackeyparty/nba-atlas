@@ -3,7 +3,11 @@ class PlayersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
-    @player = Player.new
+    if logged_in?
+      redirect_to player_path(current_user)
+    else
+      @player = Player.new
+    end
   end
 
   def create
