@@ -9,20 +9,32 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: "alert alert-info" %>
-    <% end %>
-    <div class='container'>
-      <nav>
-        <div class='container'>
-          <a href="/">NBA ATLAS</a>
-          <ul>
-            <li><a href="/login">Log In</a></li>
-          </ul>
+  <header>
+    <nav>
+      <div class='container'>
+        <div class='header-style'>
+          <h3>NBA ATLAS</h3>
         </div>
-      </nav>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <div class='container'>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-info" %>
+      <% end %>
+
       <%= yield %>
+      
     </div>
   </body>
+  <footer>
+    <nav>
+      <div class='container'>
+        <div class='nav'>
+          <%= link_to "Home", '/' %>  <%= link_to "Log In", '/login' %>  <%= link_to 'Log Out', '/logout', method: :post %>
+        </div>
+      </div>
+    </nav>
+  </footer>
 </html>

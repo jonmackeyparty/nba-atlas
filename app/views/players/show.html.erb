@@ -1,4 +1,6 @@
-<h2><%= @player.name %></h2>
+<div class="section">
+  <h2><%= @player.name %></h2>
+</div>
 <table class="u-full-width">
   <thead>
     <tr>
@@ -15,17 +17,19 @@
       <td><%= @player.position %></td>
       <td><%= @player.jersey_number %></td>
     </tr>
-    </tbody>    
+    </tbody>
 </table>
 
-<h2>Leagues</h2>
+<div class="section">
+  <h2>Leagues</h2>
+</div>
 
 <%= render 'approved' %>
 
 <%= render 'admin_show' if @player.admin %>
 
-<h2>Pending Invitations</h2>
+<div class="section">
+  <h2>Pending Invitations</h2>
+</div>
 
 <%= render 'pending' %>
-
-<p><%= link_to 'Logout', '/logout', method: :post %> <%= link_to "Edit Profile", edit_player_path(@player)%>

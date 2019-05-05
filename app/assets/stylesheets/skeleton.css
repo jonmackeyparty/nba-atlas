@@ -25,6 +25,40 @@
 - Media Queries
 */
 
+/* Custom Bits
+__________________________________________________ */
+.header-style {
+  color: #FFFFFF;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #940f25;
+}
+
+.nav {
+  color: #FFFFF;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #E5E7E9;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #E5E7E9;
+}
+
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -158,9 +192,9 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: #1F4488; }
 a:hover {
-  color: #0FA0CE; }
+  color: #940f25; }
 
 
 /* Buttons
