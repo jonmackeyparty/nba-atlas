@@ -1,7 +1,17 @@
-<h2>Hello how about logging in?</h2>
-<%= form_tag '/login', method: :post do %>
-  Name: <%= text_field_tag :name %><br>
-  Password: <%= password_field_tag :password %><br>
-  <%= submit_tag "Log In" %>
-<% end %>
-<%= link_to 'Log in with Github', '/auth/github' %>
+<h2>Hello, how about logging in?</h2>
+<form>
+  <%= form_tag '/login', method: :post do %>
+    <div class="row">
+      <div class="six columns">
+        <%= label_tag 'Name' %>
+        <%= text_field_tag :name, nil, class: "u-full-width" %>
+      </div>
+      <div class="six columns">
+        <%= label_tag 'Password' %>
+        <%= password_field_tag :password, nil, class: "u-full-width" %>
+      </div>
+    </div>
+    <%= submit_tag "Log In" %>
+  <% end %>
+</form>
+<h3>Or <%= link_to 'Log in with Github', '/auth/github' %></h3>
