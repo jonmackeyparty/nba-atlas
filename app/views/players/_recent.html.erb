@@ -1,4 +1,4 @@
-<% @player.leagues.each do |league| %>
+<% @player.league_admin.each do |league| %>
   <% if league.invitations.recent.any? %>
   <ul>
     <% league.invitations.recent.each do |i| %>

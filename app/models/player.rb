@@ -1,6 +1,6 @@
 class Player < ApplicationRecord
   has_many :invitations
-  has_many :leagues
+  has_many :leagues, :foreign_key => 'admin_id'
   has_many :teams, through: :leagues
   has_many :leagues, through: :invitations
   validates :name, presence: true
@@ -18,6 +18,10 @@ class Player < ApplicationRecord
 
   def duplicate_invitation(id)
     invitations.approved.select{ |i| i.league_id == id}.count > 0
+  end
+
+  def league_admin
+    League.where(:admin => self)
   end
 
 end

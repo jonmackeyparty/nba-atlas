@@ -4,6 +4,6 @@
 <ul>
   <li>League Type: <%= @league.league_type %>
   <li>Schedule: <%= @league.schedule %>
-  <li>League Admin: <%= @league.player.name %>
+  <li>League Admin: <%= @league.admin.name %>
 </ul>
-<h5><%= link_to "Edit League", edit_league_path(@league) if @player == @league.player %></h5>
+<h5><%= link_to "Edit League", edit_league_path(@league) if @player == @league.admin %></h5>
