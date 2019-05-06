@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
     session[:player_id] != nil && session[:player_id] != ""
   end
 
+  def check_cancel
+    if params['commit'] == "Cancel"
+      redirect_to player_path(current_user)
+    end
+  end
+  
 end

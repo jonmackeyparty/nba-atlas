@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_action :check_cancel, only: [:edit]
   before_action :require_login
   skip_before_action :require_login, only: [:new, :create]
 
