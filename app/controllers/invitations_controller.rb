@@ -1,5 +1,7 @@
 class InvitationsController < ApplicationController
+  include InvitationsHelper
   before_action :require_login
+  before_action :check_cancel, only: [:create]
 
   def index
     current_user
@@ -11,9 +13,6 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    if params['commit'] == "Cancel"
-      redirect_to player_path(current_user)
-    else
       @invitation = Invitation.new(invitations_params)
       if @invitation.save
         flash[:message] = "Invitation successfully sent."
@@ -21,18 +20,17 @@ class InvitationsController < ApplicationController
       else
         redirect_to new_player_invitation_path(current_user)
       end
-    end
   end
 
   def update
     @invitation = Invitation.find(params[:id])
-    @invitation.update(invitations_params)
-    redirect_to player_path(current_user)
+    check_duplicates
   end
 
   def destroy
     @invitation = Invitation.find(params[:id])
     @invitation.delete
+    flash[:message] = "Invitation deleted."
     redirect_to player_path(current_user)
   end
 

@@ -15,4 +15,8 @@ class Player < ApplicationRecord
     age.nil? || nickname.nil? || position.nil? || jersey_number.nil?
   end
 
+  def duplicate_invitation(id)
+    invitations.approved.select{ |i| i.league_id == id}.count > 0
+  end
+
 end

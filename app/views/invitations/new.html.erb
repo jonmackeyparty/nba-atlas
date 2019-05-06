@@ -4,5 +4,5 @@
   <%= f.label :league_id, "Which league is sending the invite?" %><br>
   <%= f.collection_select(:league_id, @player.leagues.all, :id, :name) %><br>
   <%= f.submit %>
-  <%= button_to "Cancel", :back, :method => :get %>
+  <%= f.submit "Cancel" %>
 <% end %>
