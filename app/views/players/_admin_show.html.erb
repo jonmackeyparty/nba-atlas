@@ -1,9 +1,6 @@
-
 <%= render 'leagues' %>
 
-
 <h4><%= link_to "Create a new League", new_player_league_path(@player) %></h4>
-
 
 <div class="section">
   <h2>Recently Sent Invitations</h2>
@@ -11,4 +8,4 @@
 
 <%= render 'recent' %>
 
-<%= link_to "Send New Invitation", new_player_invitation_path(@player) %><br>
+<h4><%= link_to "Send New Invitation", new_player_invitation_path(@player) %></h4>

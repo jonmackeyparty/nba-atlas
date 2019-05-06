@@ -3,6 +3,7 @@ class Player < ApplicationRecord
   has_many :leagues, through: :invitations
   has_many :invitations
   has_many :leagues
+  validates :name, presence: true
   has_secure_password
 
 

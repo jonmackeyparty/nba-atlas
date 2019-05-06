@@ -30,6 +30,12 @@ class InvitationsController < ApplicationController
     redirect_to player_path(current_user)
   end
 
+  def destroy
+    @invitation = Invitation.find(params[:id])
+    @invitation.delete
+    redirect_to player_path(current_user)
+  end
+
   private
 
   def invitations_params
