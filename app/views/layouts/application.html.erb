@@ -21,7 +21,7 @@
   <body>
     <div class='container'>
       <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, class: "alert alert-info" %>
+        <%= content_tag :div, msg, class: "alert" %>
       <% end %>
 
       <%= yield %>
@@ -32,7 +32,7 @@
     <nav>
       <div class='container'>
         <div class='nav'>
-          <%= link_to "Home", '/' %>  <%= link_to "Log In", '/login' %>  <%= link_to 'Log Out', '/logout', method: :post %>
+          <%= link_to "Sign Up", '/signup' %>  <%= link_to "Log In", '/login' %>  <%= link_to 'Log Out', '/logout', method: :post %>  <%= link_to "Home", '/' %>  
         </div>
       </div>
     </nav>
