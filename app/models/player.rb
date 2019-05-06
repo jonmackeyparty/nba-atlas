@@ -3,13 +3,13 @@ class Player < ApplicationRecord
   has_many :leagues
   has_many :teams, through: :leagues
   has_many :leagues, through: :invitations
-
   validates :name, presence: true
   has_secure_password
 
-
-  def checks_out?
-    self.password == self.password_confirmation && Player.find_by(:name => self.name) == nil
+  def checks_out
+    def checks_out?
+      self.password == self.password_confirmation && Player.find_by(:name => self.name) == nil
+    end
   end
 
   def missing_attributes

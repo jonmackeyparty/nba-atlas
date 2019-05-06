@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  include PlayersHelper
   before_action :check_cancel, only: [:edit]
   before_action :require_login
   skip_before_action :require_login, only: [:new, :create]
@@ -13,13 +14,12 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(player_params)
-    if @player.checks_out?
-      @player.save
+    if @player.checks_out && @player.save
       session[:player_id] = @player.id
       flash[:message] = "Profile successfully created."
       redirect_to player_path(@player)
     else
-      render 'players/new'
+      render :new
     end
   end
 

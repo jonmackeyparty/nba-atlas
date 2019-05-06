@@ -11,10 +11,4 @@ module InvitationsHelper
     end
   end
 
-  def check_cancel
-    if params['commit'] == "Cancel"
-      redirect_to player_path(current_user)
-    end
-  end
-
 end
