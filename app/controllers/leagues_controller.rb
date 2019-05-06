@@ -17,7 +17,7 @@ class LeaguesController < ApplicationController
     if @league.save
       redirect_to player_path(@league.admin)
     else
-      redirect_to new_player_league_path(@player)
+      render 'new'
     end
   end
 

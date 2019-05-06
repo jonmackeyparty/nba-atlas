@@ -1,4 +1,4 @@
-  <%= render 'errors' %>
+  <%= render partial: 'errors', locals: {obj: @player} %>
   <%= form_for @player do |f| %>
     <div class='row'>
       <div class='six columns'>
