@@ -6,6 +6,10 @@
   <h2>Recently Sent Invitations</h2>
 </div>
 
-<%= render 'recent' %>
+<% if @player.recent_invitations %>
+  <%= render 'recent' %>
+<% else %>
+  <p>No recently sent invitations.</p>
+<% end %>
 
 <h4><%= link_to "Send New Invitation", new_player_invitation_path(@player) %></h4>

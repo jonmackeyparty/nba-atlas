@@ -10,7 +10,7 @@ class Invitation < ApplicationRecord
   end
 
   def admin_name
-    League.find(self.league_id).player.name
+    League.find(self.league_id).admin.name
   end
 
   def player_name
@@ -19,6 +19,6 @@ class Invitation < ApplicationRecord
 
   def created_date
     self.created_at.strftime("%A, %b %d")
-  end
+  end 
 
 end

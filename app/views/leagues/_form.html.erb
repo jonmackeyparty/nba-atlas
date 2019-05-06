@@ -1,5 +1,5 @@
 <%= form_for((@league.new_record? ? [@player, @league] : @league)) do |f| %>
-    <%= f.hidden_field :player_id %>
+    <%= f.hidden_field :admin_id %>
     <label>League Name: </label><br>
     <%= f.text_field :name %><br>
     <label>League Type: </label><br>

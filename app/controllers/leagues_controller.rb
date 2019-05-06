@@ -8,14 +8,14 @@ class LeaguesController < ApplicationController
 
   def new
     current_user
-    @league = League.new(:player_id => params[:player_id])
+    @league = League.new(:admin_id => params[:player_id])
   end
 
   def create
     current_user
     @league = League.new(league_params)
     if @league.save
-      redirect_to player_path(@league.player)
+      redirect_to player_path(@league.admin)
     else
       redirect_to new_player_league_path(@player)
     end
@@ -40,7 +40,7 @@ class LeaguesController < ApplicationController
   private
 
   def league_params
-    params.require(:league).permit(:name, :league_type, :schedule, :player_id)
+    params.require(:league).permit(:name, :league_type, :schedule, :admin_id)
   end
 
 

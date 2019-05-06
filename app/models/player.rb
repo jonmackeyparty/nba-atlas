@@ -24,4 +24,11 @@ class Player < ApplicationRecord
     League.where(:admin => self)
   end
 
+  def recent_invitations
+    league_admin.each do |league|
+      Invitation.recent.include?(league.invitations)
+    end
+  end
+
+
 end
