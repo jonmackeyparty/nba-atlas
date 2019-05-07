@@ -1,24 +1,25 @@
-# README
+# Nonprofessional Basketballer's Atlas
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Nonprofessional Basketballer's Atlas is designed to help the frequent amateur basketball player create, organize, and keep track of her local leagues.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Clone this repo; from the root folder, execute 'shotgun' and navigate to the address provided by the server.
 
-* System dependencies
+## Usage
 
-* Configuration
+Players: Sign up or Log in using the provided forms; once logged in, you can view and respond to invitations that have been extended to you via each league's administrator.
 
-* Database creation
+Admins: Check the "admin" box when signing up.  Once approved as an admin, you can create leagues, send invitations on behalf of those leagues, and keep track of pending invitations.
 
-* Database initialization
+## Contributing
 
-* How to run the test suite
+Bug reports and pull requests are welcome on GitHub at https://github.com/'jonmackeyparty'/nba-atlas. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* Services (job queues, cache servers, search engines, etc.)
+## License
 
-* Deployment instructions
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-* ...
+## Code of Conduct
+
+Everyone interacting in the Nomad-Residence-Database project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'jonmackeyparty'/nba-atlas/blob/master/CODE_OF_CONDUCT.md).
