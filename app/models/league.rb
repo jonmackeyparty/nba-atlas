@@ -3,5 +3,5 @@ class League < ApplicationRecord
   has_many :teams
   has_many :invitations
   has_many :players, through: :invitations
-  validates :name, uniqueness: true
+  validates :name, presence: true, uniqueness: true
 end
