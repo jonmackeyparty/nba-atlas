@@ -6,4 +6,5 @@
   <li>Schedule: <%= @league.schedule %>
   <li>League Admin: <%= @league.admin.name %>
 </ul>
-<h5><%= link_to "Edit League", edit_league_path(@league) if @player == @league.admin %> <%= link_to "Delete League", league_path(@league), method: :delete %>
+
+<%= render 'admin_links' if @player == @league.admin %>
