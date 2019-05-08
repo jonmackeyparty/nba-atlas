@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2019_05_06_205713) do
     t.string "password_digest"
     t.string "password_confirmation"
     t.boolean "admin", default: false
-    t.integer "uid"
   end
 
   create_table "teams", force: :cascade do |t|
