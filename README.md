@@ -4,7 +4,7 @@ The Nonprofessional Basketballer's Atlas is designed to help the frequent amateu
 
 ## Installation
 
-Clone this repo; from the root folder, execute 'shotgun' and navigate to the address provided by the server.
+Clone this repo; from the root folder, load the schema via rake db:schema:load, then execute 'shotgun' and navigate to the address provided by the server.
 
 ## Usage
 
